@@ -28,25 +28,6 @@ class Attack:
 		self.modifier 	= rawAttack[3]
 		self.avg 		= rawAttack[4]
 						
-def simlulate_1v1( monsters ) :
-	counter = 0
-	# roll for initiative - 50%
-	if random.random() > .5:
-		counter = 1
-		
-	while monster1.hp > 0 and monster2.hp > 0:
-		hit = random.randint(1, 20)
-		if hit > monsters[ counter % 2 + 1 ].ac:
-			monsters[ counter % 2 + 1 ].hp = monsters[ counter % 2 + 1 ].hp - monsters[ counter % 2 ].maxAttack
-			
-		counter = counter + 1	
-		
-	if  monster1.hp > 0 :
-		victor = monster1
-	else:
-		victor = monster2
-	print "Victor is ", victor.name, " with a health of ", victor.hp," and completed in ", counter, " turns!"
-	
 
 def simulate_manyMonsters ( team1, team2 ):
 	counter = 0
