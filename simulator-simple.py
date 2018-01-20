@@ -27,7 +27,6 @@ class Attack:
 		self.sizeDice 	= rawAttack[2]
 		self.modifier 	= rawAttack[3]
 		self.avg 		= rawAttack[4]
-						
 
 def simulate_manyMonsters ( team1, team2 ):
 	counter = 0
@@ -88,6 +87,7 @@ def main():
 	
 	team1 = list()
 	team2 = list()
+
 	#find the monsters
 	for monster in raw1:
 		# find the monster AC and HP in monsters
@@ -154,6 +154,7 @@ def main():
 				tmp = "SELECT * FROM attacks WHERE name LIKE '"+ attack[1] +"'"	
 				# grab the attack file	
 				cursor.execute( tmp )
+
 				# go fetch it - now we have the full attack profile								
 				move = cursor.fetchone()	
 				attacks.append( Attack( move ) ) 
